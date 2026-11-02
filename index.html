@@ -1,0 +1,387 @@
+<title>Oluwabusayo Awoyomi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Oluwabusayo Olufunke Awoyomi — incoming PhD student at Simon Fraser University. NLP for African languages, multilingual language models, and health data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: two-column academic page — sticky profile rail on the left, reading column on the right; one column under 860px.
+   Palette drawn from adire, Yoruba indigo-dyed cloth: indigo ink on undyed cotton. */
+:root {
+  --bg: #f7f7f4;
+  --surface: #ffffff;
+  --ink: #1b1d2b;
+  --muted: #5a5e72;
+  --rule: #dcdde4;
+  --indigo: #2b3a8f;
+  --indigo-soft: #e8eaf6;
+  --accent: #a2581c;
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12131c; --surface: #1a1c28; --ink: #e8e8ee; --muted: #a0a3b8;
+    --rule: #2d3042; --indigo: #9aa8ff; --indigo-soft: #232847; --accent: #e3a36a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12131c; --surface: #1a1c28; --ink: #e8e8ee; --muted: #a0a3b8;
+  --rule: #2d3042; --indigo: #9aa8ff; --indigo-soft: #232847; --accent: #e3a36a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+a { color: var(--indigo); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 64px;
+  padding-block: 56px 80px;
+}
+
+/* ---------- Profile rail ---------- */
+.rail { position: sticky; top: 40px; align-self: start; display: grid; gap: 22px; }
+.portrait {
+  width: 132px; aspect-ratio: 1; max-width: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 38%, var(--indigo-soft) 39% 41%, transparent 42%),
+    repeating-linear-gradient(45deg, var(--indigo-soft) 0 6px, transparent 6px 12px),
+    var(--surface);
+  border: 1px solid var(--rule);
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-size: 44px; color: var(--indigo); font-weight: 500;
+}
+img.portrait { object-fit: cover; display: block; }
+.rail h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+.rail .middle { color: var(--muted); font-style: italic; font-weight: 400; }
+.role { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.role strong { color: var(--ink); font-weight: 600; }
+.links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 0.92rem; }
+.links li { display: flex; gap: 10px; align-items: baseline; min-width: 0; }
+.links .k {
+  font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); width: 64px; flex: none;
+}
+.links a, .links span.v { overflow-wrap: anywhere; }
+.links li.mail { display: grid; gap: 4px; }
+.links li.mail .k { width: auto; }
+.links .addr { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.links .addr .v { flex: 1 1 auto; min-width: 0; }
+.copy {
+  font: 500 0.7rem var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase;
+  background: none; border: 1px solid var(--rule); color: var(--muted);
+  padding: 1px 6px; border-radius: 3px; cursor: pointer; margin-left: 4px;
+}
+.copy:hover { color: var(--indigo); border-color: var(--indigo); }
+
+.metrics {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  padding-block: 12px;
+}
+.metrics div { display: grid; }
+.metrics b { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.metrics span { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.metrics-note { font-size: 0.78rem; color: var(--muted); margin: -12px 0 0; }
+
+/* ---------- Main column ---------- */
+nav.toc {
+  display: flex; flex-wrap: wrap; gap: 6px 20px;
+  font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;
+  padding-bottom: 18px; border-bottom: 1px solid var(--rule); margin-bottom: 8px;
+}
+nav.toc a { color: var(--muted); text-decoration: none; }
+nav.toc a:hover { color: var(--indigo); }
+
+main { min-width: 0; }
+section { padding-block: 36px 8px; scroll-margin-top: 24px; }
+h2 {
+  font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; margin: 0 0 18px;
+  letter-spacing: -0.005em; display: flex; align-items: baseline; gap: 14px;
+}
+h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); transform: translateY(-6px); }
+p { margin: 0 0 14px; max-width: 68ch; }
+.lede { font-family: var(--font-display); font-size: 1.32rem; line-height: 1.5; color: var(--ink); max-width: 36em; }
+.lede em { color: var(--indigo); font-style: italic; }
+
+/* Status banner for the SFU appointment */
+.banner {
+  display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  padding: 12px 16px; margin: 6px 0 22px; max-width: 68ch;
+}
+.banner .tag { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+
+/* Interests */
+.interests { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px 28px; }
+.interests li { min-width: 0; }
+.interests h3 { font-family: var(--font-body); font-weight: 600; font-size: 1rem; margin: 0 0 4px; }
+.interests p { font-size: 0.93rem; color: var(--muted); margin: 0; }
+
+/* News */
+.news { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.news li { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; font-size: 0.95rem; }
+.news time { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+
+/* Publications */
+.pub-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.pub-filter button {
+  font: 500 0.75rem var(--font-mono); letter-spacing: 0.04em;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--muted);
+  padding: 5px 12px; border-radius: 999px; cursor: pointer;
+}
+.pub-filter button[aria-pressed="true"] { background: var(--indigo); border-color: var(--indigo); color: var(--bg); }
+.pubs { list-style: none; padding: 0; margin: 0; display: grid; gap: 26px; }
+.pub { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; }
+.venue {
+  font-family: var(--font-mono); font-size: 0.72rem; line-height: 1.35; color: var(--indigo);
+  padding-top: 4px; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.venue small { display: block; color: var(--muted); text-transform: none; letter-spacing: 0; font-size: 0.72rem; margin-top: 2px; }
+.pub h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.14rem; line-height: 1.35; margin: 0 0 4px; text-wrap: balance; }
+.pub .authors { font-size: 0.9rem; color: var(--muted); margin: 0 0 4px; }
+.pub .authors b { color: var(--ink); font-weight: 600; }
+.pub .where { font-size: 0.9rem; font-style: italic; margin: 0 0 6px; }
+.pub .summary { font-size: 0.92rem; margin: 0 0 6px; }
+.pub .plinks { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--font-mono); font-size: 0.75rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.chip { font-family: var(--font-mono); font-size: 0.68rem; padding: 1px 7px; border-radius: 3px; background: var(--indigo-soft); color: var(--indigo); }
+
+/* Patents & projects */
+.items { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.items li { max-width: 68ch; }
+.items h3 { font-size: 1rem; font-weight: 600; margin: 0 0 2px; }
+.items p { font-size: 0.93rem; color: var(--muted); margin: 0; }
+
+/* Timeline (experience / education) */
+.timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; }
+.timeline li { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 16px; }
+.timeline .when { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.timeline h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+.timeline .org { font-size: 0.92rem; color: var(--muted); margin: 0 0 4px; }
+.timeline p.d { font-size: 0.92rem; margin: 0; }
+
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px 28px; }
+.skills div { min-width: 0; }
+.skills h3 { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 4px; font-weight: 500; }
+.skills p { font-size: 0.93rem; margin: 0; }
+
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); }
+
+@media (max-width: 860px) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 32px 56px; }
+  .rail { position: static; }
+  .portrait { width: 96px; font-size: 34px; }
+}
+@media (max-width: 520px) {
+  .pub, .news li, .timeline li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .lede { font-size: 1.15rem; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="page">
+  <aside class="rail" aria-label="Profile">
+    <img class="portrait" src="images/profile.jpg" alt="Portrait of Oluwabusayo Olufunke Awoyomi" width="132" height="132">
+    <div>
+      <h1>Oluwabusayo <span class="middle">Olufunke</span> Awoyomi</h1>
+    </div>
+    <p class="role"><strong>Incoming PhD Student</strong>, Simon Fraser University<br>Starting January 2027 · supervised by Prof. Marzena</p>
+    <ul class="links">
+      <li class="mail"><span class="k">Email</span>
+        <div class="addr"><span class="v" id="email">busayofunke@gmail.com</span><button class="copy" type="button" data-copy="email" aria-label="Copy email address">Copy</button></div>
+        <div class="addr"><span class="v" id="email-sfu">oluwabusayo_awoyomi@sfu.ca</span><button class="copy" type="button" data-copy="email-sfu" aria-label="Copy SFU email address">Copy</button></div>
+      </li>
+      <li><span class="k">Scholar</span><a href="https://scholar.google.com/citations?user=z0s0c3gAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/oluwabusayo-awoyomi/" target="_blank" rel="noopener">linkedin.com/in/oluwabusayo-awoyomi</a></li>
+    </ul>
+    <div class="metrics" aria-label="Google Scholar metrics">
+      <div><b>212</b><span>Citations</span></div>
+      <div><b>5</b><span>h-index</span></div>
+    </div>
+    <p class="metrics-note">Google Scholar, as of July 2026.</p>
+  </aside>
+
+  <main>
+    <nav class="toc" aria-label="Sections">
+      <a href="#about">About</a><a href="#news">News</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#patents">Patents &amp; Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a>
+    </nav>
+
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
+      <div class="banner"><span class="tag">Incoming · Jan 2027</span><span>PhD student at Simon Fraser University, Burnaby, BC, working with Prof. Marzena.</span></div>
+      <p class="lede">I build language technology for <em>under-resourced African languages</em> and data systems that hold up in regulated, high-stakes settings like health and pharmaceutical research.</p>
+      <p>I am a volunteer researcher with <a href="https://www.masakhane.io/" target="_blank" rel="noopener">Masakhane</a>, the open research community for African NLP. There I have fine-tuned multilingual transformer models in PyTorch and Hugging Face, prepared pretraining and evaluation data, and annotated Yoruba data for cross-lingual retrieval. I co-authored AfroLM (SustaiNLP @ EMNLP 2022), CIRAL (ACM SIGIR 2024), and AfriMTE &amp; AfriCOMET (NAACL 2024).</p>
+      <p>Alongside research, I have spent more than eight years in data roles. I currently work as a Documentation Automation Engineer on assignment at Regeneron Pharmaceuticals, where I run production data workflows with CI/CD, test harnesses, and data lineage controls, and use NLP/LLM tooling to generate traceable scientific reports. Before that I worked on HIV surveillance data reconciliation at Health Research, Inc. in New York, and as a data analyst at Nigeria's Defence Space Administration.</p>
+      <p>I hold an M.S. in Computer Science from The College of Saint Rose and a B.S. in Computer Science from Joseph Ayo Babalola University, Nigeria. I also founded the EquiHealth Institute, an independent research initiative on healthcare access.</p>
+    </section>
+
+    <section id="news" aria-labelledby="news-h">
+      <h2 id="news-h">News</h2>
+      <ul class="news">
+        <li><time datetime="2027-01">Jan 2027</time><span>Starting my PhD at Simon Fraser University with Prof. Marzena.</span></li>
+        <li><time datetime="2026">2026</time><span>Filed a U.S. provisional patent application on disease outbreak forecasting.</span></li>
+        <li><time datetime="2025">2025</time><span>Co-patentee on a Nigerian patent for an AI-driven drug repurposing system. Founded the EquiHealth Institute.</span></li>
+        <li><time datetime="2025-01">Jan 2025</time><span>Joined Insight Global as a Documentation Automation Engineer, assigned to Regeneron Pharmaceuticals.</span></li>
+        <li><time datetime="2024-07">Jul 2024</time><span>CIRAL, a cross-lingual retrieval test collection for four African languages, presented at ACM SIGIR 2024.</span></li>
+        <li><time datetime="2024-06">Jun 2024</time><span>AfriMTE &amp; AfriCOMET presented at NAACL 2024.</span></li>
+        <li><time datetime="2023-12">Dec 2023</time><span>Completed my M.S. in Computer Science at The College of Saint Rose.</span></li>
+        <li><time datetime="2022-12">Dec 2022</time><span>AfroLM presented at the SustaiNLP workshop at EMNLP 2022.</span></li>
+      </ul>
+    </section>
+
+    <section id="research" aria-labelledby="research-h">
+      <h2 id="research-h">Research Interests</h2>
+      <ul class="interests">
+        <li><h3>NLP for African languages</h3><p>Pretraining, fine-tuning, and evaluating multilingual models for languages such as Yoruba, Hausa, Somali, and Swahili, where labelled data is scarce.</p></li>
+        <li><h3>Data-efficient language models</h3><p>Active learning and other methods that get strong results from far less training data than standard baselines.</p></li>
+        <li><h3>Evaluation &amp; retrieval</h3><p>Machine translation metrics and cross-lingual information retrieval test collections built with native-speaker judgments.</p></li>
+        <li><h3>AI for health</h3><p>Forecasting, drug repurposing, and trustworthy data pipelines for public health and biomedical research.</p></li>
+      </ul>
+    </section>
+
+    <section id="publications" aria-labelledby="pubs-h">
+      <h2 id="pubs-h">Publications</h2>
+      <p style="font-size:0.9rem;color:var(--muted)">For the complete and current list, see <a href="https://scholar.google.com/citations?user=z0s0c3gAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      <div class="pub-filter" role="group" aria-label="Filter publications">
+        <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+        <button type="button" id="f-conf" data-f="conference" aria-pressed="false">Conference</button>
+        <button type="button" id="f-ws" data-f="workshop" aria-pressed="false">Workshop</button>
+      </div>
+      <ol class="pubs" id="pubs">
+        <li class="pub" data-type="conference">
+          <div class="venue">SIGIR<small>2024</small></div>
+          <div>
+            <h3>CIRAL: A Test Collection for CLIR Evaluations in African Languages</h3>
+            <p class="authors">…, <b>O. O. Awoyomi</b>, …</p>
+            <p class="where">Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval</p>
+            <p class="summary">A cross-lingual retrieval test collection with 1,600+ English queries, 2.5M+ passages in Hausa, Somali, Swahili, and Yoruba, and about 30k relevance judgments by native speakers. I annotated the Yoruba data.</p>
+            <div class="chips"><span class="chip">Information retrieval</span><span class="chip">Yoruba</span></div>
+            <div class="plinks"><a href="https://scholar.google.com/scholar?q=CIRAL%3A+A+Test+Collection+for+CLIR+Evaluations+in+African+Languages" target="_blank" rel="noopener">Find paper</a></div>
+          </div>
+        </li>
+        <li class="pub" data-type="conference">
+          <div class="venue">NAACL<small>2024</small></div>
+          <div>
+            <h3>AfriMTE and AfriCOMET: Empowering COMET to Embrace Under-resourced African Languages</h3>
+            <p class="authors">J. Wang, D. I. Adelani, S. Agrawal, …, <b>O. O. Awoyomi</b>, …</p>
+            <p class="where">Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT), pp. 5997–6023</p>
+            <p class="summary">A human-annotated machine translation evaluation dataset for African languages (AfriMTE) and COMET-based metrics adapted to them (AfriCOMET).</p>
+            <div class="chips"><span class="chip">Machine translation</span><span class="chip">Evaluation</span></div>
+            <div class="plinks"><a href="https://scholar.google.com/scholar?q=AfriMTE+and+AfriCOMET" target="_blank" rel="noopener">Find paper</a><a href="https://arxiv.org/abs/2311.09828" target="_blank" rel="noopener">arXiv</a></div>
+          </div>
+        </li>
+        <li class="pub" data-type="workshop">
+          <div class="venue">SustaiNLP<small>EMNLP 2022</small></div>
+          <div>
+            <h3>AfroLM: A Self-Active Learning-based Multilingual Pretrained Language Model for 23 African Languages</h3>
+            <p class="authors">B. F. P. Dossou, A. L. Tonja, O. Yousuf, S. Osei, A. Oppong, I. Shode, <b>O. O. Awoyomi</b>, C. C. Emezue</p>
+            <p class="where">Proceedings of the Third Workshop on Simple and Efficient Natural Language Processing (SustaiNLP), EMNLP 2022</p>
+            <p class="summary">A multilingual language model pretrained from scratch on 23 African languages with self-active learning. Trained on about 14× less data than existing baselines, it outperforms AfriBERTa, XLM-R-base, and mBERT on NER, text classification, and sentiment analysis. I prepared training data, annotated evaluation data, and ran experiments.</p>
+            <div class="chips"><span class="chip">Pretraining</span><span class="chip">Active learning</span></div>
+            <div class="plinks"><a href="https://scholar.google.com/scholar?q=AfroLM+multilingual+pretrained+language+model+African+languages" target="_blank" rel="noopener">Find paper</a></div>
+          </div>
+        </li>
+      </ol>
+      <p style="font-size:0.9rem;color:var(--muted);margin-top:22px">I have also co-authored work at IJCNLP-AACL 2023 and journal articles on health data and AI. Full titles and author lists are on my Google Scholar profile.</p>
+    </section>
+
+    <section id="patents" aria-labelledby="patents-h">
+      <h2 id="patents-h">Patents &amp; Projects</h2>
+      <ul class="items">
+        <li><h3>AI-driven drug repurposing system</h3><p>Nigerian business method patent, co-patentee, 2025.</p></li>
+        <li><h3>Disease outbreak forecasting</h3><p>U.S. provisional patent application, inventor, filed 2026 (not yet examined).</p></li>
+        <li><h3>LinguaCast: public health forecasting prototype</h3><p>Forecasting models on 711 weeks of CDC FluView ILINet influenza-like illness data (2010–2024). The linear regression model reached an out-of-sample R² of 0.9927 on held-out weeks. Research prototype only.</p></li>
+        <li><h3>EquiHealth Institute</h3><p>Founder of an independent research initiative on healthcare access, 2025–present.</p></li>
+      </ul>
+    </section>
+
+    <section id="experience" aria-labelledby="exp-h">
+      <h2 id="exp-h">Experience</h2>
+      <ol class="timeline">
+        <li><div class="when">2025 – present</div><div><h3>Documentation Automation Engineer</h3><p class="org">Insight Global, assigned to Regeneron Pharmaceuticals</p><p class="d">Production data workflows with CI/CD and test harnesses; ETL for microscopy, flow cytometry, and sequencing data; NLP/LLM-supported report generation with lineage and provenance.</p></div></li>
+        <li><div class="when">2022 – present</div><div><h3>NLP Researcher (Volunteer)</h3><p class="org">Masakhane open research community</p><p class="d">Fine-tuning multilingual transformers on GPU clusters; co-author of AfroLM, CIRAL, and AfriCOMET.</p></div></li>
+        <li><div class="when">2024</div><div><h3>Data Administrator</h3><p class="org">Health Research, Inc., Albany, NY</p><p class="d">Reconciled HIV surveillance records between the CDC's eHARS and New York's NYEHMS; documented data import code. SQL, SAS.</p></div></li>
+        <li><div class="when">2024</div><div><h3>Lead Programmer / Analyst</h3><p class="org">The State University of New York</p><p class="d">PL/SQL forecasting models and Tableau dashboards for university planning.</p></div></li>
+        <li><div class="when">2022 – 2023</div><div><h3>Graduate Assistant</h3><p class="org">The College of Saint Rose</p><p class="d">Secure document storage and retrieval with SQL FileStream and SMB.</p></div></li>
+        <li><div class="when">2018 – 2021</div><div><h3>Space Science &amp; Technology Officer, Data Analyst</h3><p class="org">Defence Space Administration, Abuja, Nigeria</p><p class="d">Automated reporting with Python and ArcGIS.</p></div></li>
+        <li><div class="when">2016 – 2018</div><div><h3>Data Analyst</h3><p class="org">GBIT Consulting Limited, Abuja, Nigeria</p></div></li>
+      </ol>
+    </section>
+
+    <section id="education" aria-labelledby="edu-h">
+      <h2 id="edu-h">Education</h2>
+      <ol class="timeline">
+        <li><div class="when">2027 – </div><div><h3>Ph.D.</h3><p class="org">Simon Fraser University, Burnaby, BC · Supervisor: Prof. Marzena</p></div></li>
+        <li><div class="when">2022 – 2023</div><div><h3>M.S. in Computer Science</h3><p class="org">The College of Saint Rose, Albany, NY</p></div></li>
+        <li><div class="when">2010 – 2014</div><div><h3>B.S. in Computer Science</h3><p class="org">Joseph Ayo Babalola University, Nigeria</p></div></li>
+      </ol>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <div class="skills">
+        <div><h3>Machine learning</h3><p>PyTorch, Hugging Face Transformers, vLLM, multilingual fine-tuning, GPU training</p></div>
+        <div><h3>Data engineering</h3><p>ETL, automated validation, CI/CD, Git, data lineage, schema governance</p></div>
+        <div><h3>Programming</h3><p>Python, SQL, PL/SQL, SAS, Flask</p></div>
+        <div><h3>Databases &amp; BI</h3><p>PostgreSQL, SQL Server, MySQL, Tableau, Power BI, ArcGIS</p></div>
+      </div>
+    </section>
+
+    <footer>© 2026 Oluwabusayo Olufunke Awoyomi · Last updated November 2026</footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  var btns = document.querySelectorAll('.pub-filter button');
+  var pubs = document.querySelectorAll('#pubs .pub');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-f');
+      btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      pubs.forEach(function (p) { p.hidden = !(f === 'all' || p.getAttribute('data-type') === f); });
+    });
+  });
+  document.querySelectorAll('.copy').forEach(function (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var src = document.getElementById(copyBtn.getAttribute('data-copy'));
+      var text = src.textContent;
+      var done = function () { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1600); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(src);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      };
+      try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
